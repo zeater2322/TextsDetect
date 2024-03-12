@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Detection with PaddleOCR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+    <style>
+      .active {
+          background-color: rgb(73, 127, 243);
+          color: rgb(248, 247, 247);
+      }
+    </style>
+</head>
+<body>
+  <h1>Text Detection using PaddleOCR</h1>
+  <h2>Text Language:(Default English)</h2>
+  <button onclick="toggleButton(0)">繁體中文</button>
+  <button onclick="toggleButton(1)">簡中&英文</button>
+  <button onclick="toggleButton(2)">英文</button>
+  <button onclick="toggleButton(3)">日文</button>
+  <button onclick="toggleButton(4)">韓文</button>
+  <button onclick="toggleButton(5)">法文</button>
+
+  <script>
+    let activeButton = null;
+
+    function toggleButton(buttonIndex) {
+        const buttons = document.querySelectorAll('button');
+        
+        buttons.forEach((button, index) => {
+            if (index === buttonIndex) {
+                button.classList.toggle('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+
+        // Update the activeButton variable
+        activeButton = buttonIndex;
+    }
+  </script>
+
+
+  <div class="container">
+    <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+      <div class="file-input">
+        <input type="file" name="file" id="file" accept="image/*">
+        <label for="file">Choose an Image</label>
+      </div>
+      <input type="submit" value="Detect Image" id="submit-button">
+    </form>
+
+
+  <!-- 掃描的文字 -->
+  <div id="results">
+    <div id="upload-status"></div>  <!-- New line to display upload status -->
+    <canvas id="canvas"></canvas>
+    <div class="text-container">
+      <ul id="text-results"></ul>
+    <!-- Object detection results will be displayed here -->
+  </div>
+
+  <div class="explanation-container">
+    <p>使用說明:</p>
+    <p>請點擊Choose an Image按鈕選擇圖片,接著按Detect Image按鈕做偵測。</p>
+  </div>
+    
+  </div>
+</body>
+</html>
