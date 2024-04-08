@@ -6,51 +6,27 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 
-    <style>
-      .active {
-          background-color: rgb(73, 127, 243);
-          color: rgb(248, 247, 247);
-      }
-    </style>
 </head>
 <body>
-  <h1>Text Detection using PaddleOCR</h1>
-  <h2>Text Language:(Default English)</h2>
-  <button onclick="toggleButton(0)">繁體中文</button>
-  <button onclick="toggleButton(1)">簡中&英文</button>
-  <button onclick="toggleButton(2)">英文</button>
-  <button onclick="toggleButton(3)">日文</button>
-  <button onclick="toggleButton(4)">韓文</button>
-  <button onclick="toggleButton(5)">法文</button>
-
-  <script>
-    let activeButton = null;
-
-    function toggleButton(buttonIndex) {
-        const buttons = document.querySelectorAll('button');
-        
-        buttons.forEach((button, index) => {
-            if (index === buttonIndex) {
-                button.classList.toggle('active');
-            } else {
-                button.classList.remove('active');
-            }
-        });
-
-        // Update the activeButton variable
-        activeButton = buttonIndex;
-    }
-  </script>
-
-
   <div class="container">
-    <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
-      <div class="file-input">
-        <input type="file" name="file" id="file" accept="image/*">
-        <label for="file">Choose an Image</label>
-      </div>
-      <input type="submit" value="Detect Image" id="submit-button">
+  <h1>文字偵測</h1>
+  <h2>選取文本語言:(Default English)</h2>
+  <button onclick="toggleButton(0)" data-lang="chinese_cht" class="L-btn">繁體中文</button>
+  <button onclick="toggleButton(1)" data-lang="ch" class="L-btn">簡中&英文</button>
+  <button onclick="toggleButton(2)" data-lang="en" class="L-btn">英文</button>
+  <button onclick="toggleButton(3)" data-lang="japan" class="L-btn">日文</button>
+  <button onclick="toggleButton(4)" data-lang="korean" class="L-btn">韓文</button>
+  <button onclick="toggleButton(5)" data-lang="fr" class="L-btn">法文</button>
+    <div class="main-button">
+      <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+        <div class="file-input">
+          <input type="file" name="file" id="file" accept="image/*">
+          <label for="file">Choose an Image</label>
+        </div>
+        <input type="submit" value="Detect Image" id="submit-button">
+    </div>
     </form>
+  <div id="language-switch-message"></div>
 
 
   <!-- 掃描的文字 -->
