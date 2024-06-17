@@ -1,10 +1,25 @@
   body {
     font-family: Arial, sans-serif;
+    overflow-y: auto; /* 添加垂直滾動條 */
   }
   
   .container {
     margin: auto;
     text-align: center;
+    padding:0px;
+    
+}
+
+/* 調整排版以避免重疊問題 */
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  .L-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
   /* 新增的樣式 */
@@ -116,20 +131,26 @@
   
   
 #text-results {
-  margin-top: 30px;
   display: flex;
   flex-direction: column; /* 設置為垂直排列 */
   align-items: flex-start; /* 文字從左側對齊 */
   justify-content: flex-start; /* 文字從頂部對齊 */
-  position: fixed;
   left: 0; /* 使用左邊的固定位置 */
-  top: 30%; /* 與上邊的中心對齊 */
-  transform: translateY(200%); /* 垂直置中 */
-  left: 50%; /* 與左邊的中心對齊 */
-  transform: translateX(25%); /* 微調相對位置 */
+  transform: translateX(2%); 
 }
 
-
+.text-container{
+    width: 600px; 
+    height: 600px;
+    border: 2px solid rgb(86, 116, 250);
+    top: 50%; /* 與上邊的中心對齊 */
+    transform: translateY(-30%); /* 垂直置中 */
+    box-sizing: border-box; /* 讓邊框包含在元素尺寸內 */
+    left: 52%; /* 與左邊的中心對齊 */
+    margin: 0; /* 清除預設的邊距 */
+    position: fixed; /* 使用固定定位 */
+    overflow-y: auto; /* 添加垂直滾動條 */
+}
 #canvas {
     width: 600px; 
     height: 600px;
@@ -139,7 +160,7 @@
     right: 0; /* 與左邊對齊 */
     top: 50%; /* 與上邊的中心對齊 */
     transform: translateY(-30%); /* 垂直置中 */
-    right: 50%; /* 與右邊的中心對齊 */
+    right: 52%; /* 與右邊的中心對齊 */
     border: 2px solid red; /* 添加紅色外框 */
     box-sizing: border-box; /* 讓邊框包含在元素尺寸內 */
 }
@@ -157,5 +178,3 @@
     border-radius: 5px; /* 圓角邊框 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
 }
-
-

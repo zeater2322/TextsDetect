@@ -151,3 +151,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+module.exports = {
+    displayImage,
+    toggleButton
+  };
+  

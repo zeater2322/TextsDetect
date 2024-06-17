@@ -1,0 +1,20 @@
+{
+  "name": "textsdetect",
+  "version": "1.0.0",
+  "description": "",
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start":"scripts.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "canvas": "^2.11.2",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

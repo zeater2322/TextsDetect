@@ -24,25 +24,31 @@
           <label for="file">Choose an Image</label>
         </div>
         <input type="submit" value="Detect Image" id="submit-button">
-    </div>
+        
+      </div>
+      
     </form>
-  <div id="language-switch-message"></div>
-
+ 
+  
+  <div id="language-switch-message">提示框
+    <div id="copy-hint"></div>
+  </div>
+  <!-- <button id="copy-button">複製文字</button> -->
 
   <!-- 掃描的文字 -->
-  <div id="results">
+  <!-- <div id="results"> -->
     <div id="upload-status"></div>  <!-- New line to display upload status -->
     <canvas id="canvas"></canvas>
-    <div class="text-container">
+    <div class="text-container"> 
       <ul id="text-results"></ul>
     <!-- Object detection results will be displayed here -->
-  </div>
+    </div>
 
   <div class="explanation-container">
     <p>使用說明:</p>
     <p>請點擊Choose an Image按鈕選擇圖片,接著按Detect Image按鈕做偵測。</p>
   </div>
     
-  </div>
+  <!-- </div> -->
 </body>
 </html>
