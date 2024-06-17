@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Detection with PaddleOCR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+</head>
+<body>
+  <div class="container">
+  <h1>文字偵測</h1>
+  <h2>選取文本語言:(Default English)</h2>
+  <button onclick="toggleButton(0)" data-lang="chinese_cht" class="L-btn">繁體中文</button>
+  <button onclick="toggleButton(1)" data-lang="ch" class="L-btn">簡中&英文</button>
+  <button onclick="toggleButton(2)" data-lang="en" class="L-btn">英文</button>
+  <button onclick="toggleButton(3)" data-lang="japan" class="L-btn">日文</button>
+  <button onclick="toggleButton(4)" data-lang="korean" class="L-btn">韓文</button>
+  <button onclick="toggleButton(5)" data-lang="fr" class="L-btn">法文</button>
+    <div class="main-button">
+      <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+        <div class="file-input">
+          <input type="file" name="file" id="file" accept="image/*">
+          <label for="file">Choose an Image</label>
+        </div>
+        <input type="submit" value="Detect Image" id="submit-button">
+    </div>
+    </form>
+  <div id="language-switch-message"></div>
+
+
+  <!-- 掃描的文字 -->
+  <div id="results">
+    <div id="upload-status"></div>  <!-- New line to display upload status -->
+    <canvas id="canvas"></canvas>
+    <div class="text-container">
+      <ul id="text-results"></ul>
+    <!-- Object detection results will be displayed here -->
+  </div>
+
+  <div class="explanation-container">
+    <p>使用說明:</p>
+    <p>請點擊Choose an Image按鈕選擇圖片,接著按Detect Image按鈕做偵測。</p>
+  </div>
+    
+  </div>
+</body>
+</html>

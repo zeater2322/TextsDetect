@@ -1,0 +1,161 @@
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    margin: auto;
+    text-align: center;
+}
+
+  /* 新增的樣式 */
+  .explanation-container {
+      position: fixed;
+      bottom: 0; /* 距離畫面底部的距離 */
+      right: 0; /* 距離畫面右側的距離 */
+      margin-right: 20px; /* 可根據需要進行調整 */
+      margin-bottom: 20px; /* 可根據需要進行調整 */
+      max-width: 300px;
+      font-size: 14px;
+      color: #555;
+  }
+    
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  h1, h2 {
+    margin-bottom: 10px;
+    text-align: center; /* 水平置中 */
+  }
+  
+  .file-input {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  
+  label,
+  input[type="submit"] {
+    min-width: 200px;
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    border-bottom: 4px solid #d9d9d9;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0px 5px 10px #0057ab;
+    transition: all 0.3s;
+    padding: 12px 20px;
+    margin-top: 15px; /* 向上移動 20px */
+  }
+  label:hover,
+  input[type="submit"]:hover {
+    box-shadow: 0px 15px 25px -5px #0057ab;
+    transform: scale(1.03);
+  }
+  label:active,
+  input[type="submit"]:active {
+    box-shadow: 0px 4px 8px #0065c8;
+    transform: scale(0.98);
+  }
+  
+
+.L-btn,
+.L-btn:focus {
+    position: relative;
+    z-index: 1;
+    min-width: 40px;
+    border: 2px solid #4d65d2;
+    border-radius: 0;
+    margin-bottom: 20px;
+    color: #020202;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    padding: 2px 15px;
+}
+.L-btn:after {
+    content: "";
+    position: absolute;
+    height: 0%;
+    left: 50%;
+    top: 50%;
+    width: 150%;
+    z-index: -1;
+    background: #4dd280;
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+    -webkit-transition: all 0.75s ease 0s;
+    -moz-transition: all 0.75s ease 0s;
+    -o-transition: all 0.75s ease 0s;
+    transition: all 0.75s ease 0s;
+}
+.L-btn:hover {
+    color: #FFFFFF;
+    text-shadow: none;
+}
+.L-btn:hover:after {
+    height: 450%;
+}
+  
+  
+#text-results {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column; /* 設置為垂直排列 */
+  align-items: flex-start; /* 文字從左側對齊 */
+  justify-content: flex-start; /* 文字從頂部對齊 */
+  position: fixed;
+  left: 0; /* 使用左邊的固定位置 */
+  top: 30%; /* 與上邊的中心對齊 */
+  transform: translateY(200%); /* 垂直置中 */
+  left: 50%; /* 與左邊的中心對齊 */
+  transform: translateX(25%); /* 微調相對位置 */
+}
+
+
+#canvas {
+    width: 600px; 
+    height: 600px;
+    object-fit: contain; /* 確保圖像以原始比例顯示在畫布中央 */
+    margin: 0; /* 清除預設的邊距 */
+    position: fixed; /* 使用固定定位 */
+    right: 0; /* 與左邊對齊 */
+    top: 50%; /* 與上邊的中心對齊 */
+    transform: translateY(-30%); /* 垂直置中 */
+    right: 50%; /* 與右邊的中心對齊 */
+    border: 2px solid red; /* 添加紅色外框 */
+    box-sizing: border-box; /* 讓邊框包含在元素尺寸內 */
+}
+
+
+#language-switch-message {
+    left: 20px; /* 調整左側邊距以控制靠近左邊緣的程度 */
+    top: 200px; /* 或根據需要調整垂直位置 */
+    max-width: 200px;
+    font-size: 14px;
+    color: #0400ff;
+    background-color: #f9f9f9; /* 選擇合適的背景色 */
+    border: 1px solid #ddd; /* 添加邊框 */
+    padding: 10px; /* 添加內邊距 */
+    border-radius: 5px; /* 圓角邊框 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+}
+
+
